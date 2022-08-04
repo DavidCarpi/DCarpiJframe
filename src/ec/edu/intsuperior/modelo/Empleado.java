@@ -1,22 +1,34 @@
 package ec.edu.intsuperior.modelo;
 
+import java.util.Date;
+
 public class Empleado extends Persona{
-    private int sueldoBruto;
-    Directivo directivo;
+    private double sueldo;
     
     public Empleado() {
     }
 
-    public Empleado(String nombre,int edad,int sueldoBruto) {
-        this.sueldoBruto = sueldoBruto;
+    public Empleado(double sueldo, String Nombre, String Apellido, String Cedula, Date fechaNacimiento) {
+        super(Nombre, Apellido, Cedula, fechaNacimiento);
+        this.sueldo = sueldo;
     }
 
-    public int getSueldoBruto() {
-        return sueldoBruto;
+
+
+    public double getSueldo() {
+        return sueldo;
     }
 
-    public void setSueldoBruto(int sueldoBruto) {
-        this.sueldoBruto = sueldoBruto;
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
     }
-    
+        @Override
+    public String toString() {
+        return "Los datos son: \n"
+                + "Cedula: " +getCedula() + "\n"
+                + "Nombre: "+getNombre() + "\n"
+                + "Apelldo: "+getApellido() +"\n"
+                + "FechaNacimiento: "+getFechaNacimiento() + "\n"
+                + "Sueldo: " +getSueldo();
+    }
 }

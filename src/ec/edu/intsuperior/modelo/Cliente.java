@@ -1,23 +1,40 @@
 package ec.edu.intsuperior.modelo;
 
-public class Cliente extends Persona{
-    private int telefonContacto; 
-    Empresa empresa;
+import java.util.Date;
+
+public class Cliente extends Empleado{
+    private int telefono; 
+    private Empresa empresa;
 
     public Cliente() {
     }
 
-    public Cliente(String nombre, int edad, int telefonContacto) {
-        this.telefonContacto = telefonContacto;
+    public Cliente(int telefono, Empresa empresa, double sueldo, String Nombre, String Apellido, String Cedula, Date fechaNacimiento) {
+        super(sueldo, Nombre, Apellido, Cedula, fechaNacimiento);
+        this.telefono = telefono;
+        this.empresa = empresa;
     }
 
-    public void setTelefonContacto(int telefonContacto) {
-        this.telefonContacto = telefonContacto;
+
+    public int getTelefono() {
+        return telefono;
     }
 
-    public int getTelefonContacto() {
-        return telefonContacto;
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
     
-    
+        @Override
+    public String toString() {
+        return "Los datos son: \n"
+                + "Telefono" +getTelefono();
+    }
 }

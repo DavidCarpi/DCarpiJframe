@@ -1,43 +1,53 @@
 package ec.edu.intsuperior.modelo;
 
-public class Persona {
-    public String nombre;
-    public int edad;
-    Cliente cliente;
-    
+import java.util.Date;
+
+public abstract class Persona {
+   private String Nombre;
+   private String Apellido;
+   private String Cedula;
+   private Date fechaNacimiento;
+   
     public Persona() {
     }
 
-    public Persona(String nombre, int edad, Cliente cliente) {
-        this.nombre = nombre;
-        this.edad = edad;
+    public Persona(String Nombre, String Apellido, String Cedula, Date fechaNacimiento) {
+        this.Nombre = Nombre;
+        this.Apellido = Apellido;
+        this.Cedula = Cedula;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
-    public int getEdad() {
-        return edad;
+    public String getApellido() {
+        return Apellido;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setApellido(String Apellido) {
+        this.Apellido = Apellido;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public String getCedula() {
+        return Cedula;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setCedula(String Cedula) {
+        this.Cedula = Cedula;
     }
 
-    
-    
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
     
 }
